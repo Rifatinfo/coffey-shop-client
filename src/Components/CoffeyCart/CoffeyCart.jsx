@@ -41,16 +41,16 @@ const CoffeyCart = ({ coffey , setCoffees , coffees}) => {
     }
     return (
         <div className="bg-[#F5F4F1]">
-            <div className="flex justify-between items-center  p-6">
+            <div className="md:flex md:justify-between md:items-center text-center space-y-2 p-6">
                 <div>
-                    <img className="w-[185px] h-[239px] object-cover" src={photo} alt="" />
+                    <img className="w-[185px] h-[239px] object-cover mx-auto" src={photo} alt="" />
                 </div>
                 <div className="space-y-2">
                     <p><strong className="text-gray-400">Name :</strong> {category}</p>
                     <p><strong className="text-gray-400">Chef :</strong>{chef}</p>
                     <p><strong className="text-gray-400">Price :</strong> 123 $</p>
                 </div>
-                <div className="grid gap-2">
+                <div className="flex items-center justify-center md:grid gap-2">
                     <button className="btn btn-square bg-[#D2B48C]">
                         <FaEye className="text-white" />
                     </button>

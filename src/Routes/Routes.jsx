@@ -5,6 +5,8 @@ import Roots from "../Roots/Roots";
 import Home from "../Home/Home";
 import AddCoffey from "../Components/AddCoffey/AddCoffey";
 import UpdateCoffey from "../Components/UpdateCoffey/UpdateCoffey";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
 
   const router = createBrowserRouter([
     {
@@ -19,6 +21,14 @@ import UpdateCoffey from "../Components/UpdateCoffey/UpdateCoffey";
         {
             path : '/addCoffey',
             element : <AddCoffey/>
+        },
+        {
+            path : '/sign-in',
+            element : <Login/>
+        },
+        {
+            path : '/register',
+            element : <Register/>
         },
         {
             path : '/updateCoffey/:id',
