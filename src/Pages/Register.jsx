@@ -13,15 +13,15 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const name = e.target.name.value;
-        console.log(email, password, name);
+        // console.log(email, password, name);
 
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
 
                 // save new user in data base 
-                const createdAt = result?.user?.metadata?.creationTime
-                const newUser = { email, name , createdAt}
+                const createdAt = result?.user?.metadata?.creationTime || new Date().toISOString();
+                const newUser = {email, name , createdAt} 
                 fetch('http://localhost:5000/users', {
                     method: "POST",
                     headers: {
@@ -56,7 +56,7 @@ const Register = () => {
                             <input name="name" type="text" className="input" placeholder="name" />
                             <div><a className="link link-hover">Forgot password?</a></div>
                             <button className="btn btn-neutral mt-4 bg-[#E3B577] border-none text-black">Register</button>
-                            <Link to="/register"><p className="px-6  text-center ">Do not have an account yet?
+                            <Link to="/sign-in"><p className="px-6  text-center ">Do not have an account yet?
                                 <a rel="noopener noreferrer" href="#" className="hover:underline"> <span className="font-bold">Sign In</span></a>.
                             </p></Link>
                         </fieldset>
